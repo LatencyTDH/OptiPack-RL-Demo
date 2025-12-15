@@ -1,0 +1,5 @@
+{
+  "name": "OptiPack AI - Knapsack Explorer",
+  "description": "An interactive educational tool to explore the Knapsack Problem, its solutions using Dynamic Programming vs Reinforcement Learning concepts, and real-world business applications.",
+  "requestFramePermissions": []
+}
