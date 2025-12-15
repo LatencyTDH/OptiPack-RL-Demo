@@ -4,7 +4,7 @@ import Visualizer from './components/Visualizer';
 import RLSection from './components/RLSection';
 import BusinessSection from './components/BusinessSection';
 import ChatInterface from './components/ChatInterface';
-import { Box, BookOpen, BrainCircuit, Briefcase, MessageSquare } from 'lucide-react';
+import { Box, BrainCircuit, Briefcase, MessageSquare } from 'lucide-react';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.VISUALIZER);
@@ -14,9 +14,7 @@ const App: React.FC = () => {
     switch (activeTab) {
       case Tab.VISUALIZER:
         return <Visualizer />;
-      case Tab.LEARN: // Reusing RL Section structure mostly, but for simplicity we merge Learn/RL in UI concept or separate.
-        return <div className="p-8 text-center"><h2 className="text-2xl">General Theory (See RL & AI Tab)</h2></div>;
-      case Tab.RL_CONTEXT:
+      case Tab.RL_SIMULATION:
         return <RLSection />;
       case Tab.BUSINESS:
         return <BusinessSection />;
@@ -45,10 +43,10 @@ const App: React.FC = () => {
               <Box size={16} /> Visualizer
             </button>
             <button 
-              onClick={() => setActiveTab(Tab.RL_CONTEXT)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${activeTab === Tab.RL_CONTEXT ? 'bg-indigo-50 text-indigo-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
+              onClick={() => setActiveTab(Tab.RL_SIMULATION)}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${activeTab === Tab.RL_SIMULATION ? 'bg-indigo-50 text-indigo-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
             >
-              <BrainCircuit size={16} /> RL & Theory
+              <BrainCircuit size={16} /> RL Simulation
             </button>
             <button 
               onClick={() => setActiveTab(Tab.BUSINESS)}
